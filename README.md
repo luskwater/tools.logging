@@ -27,7 +27,7 @@ The following short example should give you what you need to get started:
 (defn divide [x y]
   (log/info "dividing" x "by" y)
   (try
-    (log/spyf "result: %s" (/ x y)) ; yields the result
+    (log/spyf "result is %s" (/ x y)) ; yields the result
     (catch Exception ex
       (log/error ex "There was an error in calculation"))))
 ```
@@ -35,7 +35,7 @@ The following short example should give you what you need to get started:
 Example repl output using the configuration below:
 
 ```
-user=> (use 'my.example)
+user=> (use 'example.math)
 nil
 user=> (divide 1 2)
 INFO  example.math: dividing 1 by 2
@@ -45,7 +45,7 @@ user=> (divide 2 0)
 INFO  example.math: dividing 2 by 0
 ERROR example.math: There was an error in calculation
 java.lang.ArithmeticException: Divide by zero
-	at clojure.lang.Numbers.divide(Numbers.java:156)
+	at clojure.lang.Numbers.divide(Numbers.java:158)
     ...
 ```
 
